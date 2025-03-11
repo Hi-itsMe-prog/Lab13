@@ -31,10 +31,10 @@ public class Main {
         camera.printRating(String.valueOf(camera.rating));
 
         UserProduct userProduct = new UserProduct();
-        userProduct.UserProduct("Smartphone", 499.99, 4.7, "user123", "password123");
+        userProduct.UserProduct("Smartphone", "499.99", "4.7", "user123", "password123");
         userProduct.printName(userProduct.name);
-        userProduct.printPrice(String.valueOf(userProduct.price));
-        userProduct.printRating(String.valueOf(userProduct.rating));
+        userProduct.printPrice(userProduct.price);
+        userProduct.printRating(userProduct.rating);
         userProduct.printLog(userProduct.log);
         userProduct.printPass(userProduct.pass);
         userProduct.purchase();
@@ -193,11 +193,11 @@ class Camera implements Product {
 }
 class UserProduct implements Product, User {
     public String name;
-    public double price;
-    public double rating;
+    public String price;
+    public String rating;
     public String log;
     public String pass;
-    void UserProduct(String name, double price, double rating, String log, String pass)
+    void UserProduct(String name, String price, String rating, String log, String pass)
     {
         this.name = name;
         this.price = price;
